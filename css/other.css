@@ -1,0 +1,25 @@
+body
+{
+    background: url('../img/laptop.jpg') ;
+    background-size: cover;
+}
+.myContainer
+{
+    color: white;
+    top: 30%;
+    left: 40%;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    margin-right: -50%;
+
+    text-align: center;
+}
+
+.login-logo
+{
+    margin-left: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+    display: flex;
+}

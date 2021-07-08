@@ -15,11 +15,63 @@ body
 
     text-align: center;
 }
-
+.myDiv{
+background: transparent;
+}
+.myInput
+{
+    background: transparent;
+    border: 0px;
+    height: 100%;
+    box-sizing: border-box;
+    transition: 0.5s;
+    outline: none;
+}
+.myLabel
+{
+    font-size: 20px;
+    background: transparent;
+    border-radius: 20px;
+    border: 1px solid silver;
+}
+.myInput:focus
+{
+    width: 250px;
+}
+.myInput::selection
+{
+    background: silver;
+    color: white;
+}
 .login-logo
 {
-    margin-left: 50px;
+    margin-left: 70px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     display: flex;
 }
+.myBtn
+{
+    font-size: 20px;
+    height: 40px;
+    width: 90%;
+    border-radius: 20px;
+    background: transparent;
+    outline: none;
+}
+
+
+.myBtn:focus
+{
+    outline: none;
+    transition: background-color .2s linear;
+
+}
+.myBtn:hover
+{
+    box-shadow: 0px 0px 0px 3px silver;
+    background: black;
+    color: white;
+    transition: background-color 2s linear;
+}
+

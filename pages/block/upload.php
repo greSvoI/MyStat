@@ -1,7 +1,6 @@
 <?php
 if(isset($_POST['btnUpload']))
 {
-
     $number = (int)trim($_POST['number_dz']);
     $language = $_POST['language'];
     $task = '\''.htmlentities($_POST['task'].'\'');
@@ -30,5 +29,4 @@ if(isset($_POST['btnUpload']))
         header('Location: main.php?page=3');
     }
     else echo "<p>".$connection->error."</p>";
-
 }

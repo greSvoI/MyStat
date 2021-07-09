@@ -3,50 +3,10 @@
 ?>
 <div class="container-fluid" style="overflow: auto">
     <div class="row">
-            <div class="homework-nav">
-                Выбор группы
-                <select name="selectGroup" id="selectHomeWork" class="selectHomeWork">
-                 <?php
-
-                 ?>
-                 </select>
-
-                   <!--  <form action="upload.php" method="post" enctype="multipart/form-data">
-                            <h3>Upload HomeWork</h3>
-                              <input type="file" name="file">
-                            <input type="submit" value="Upload">
-                     </form>-->
-
-                    <button onclick="homeworkUp()" id="btnUpload" class="btnHomeWork">Upload Home work</button>
-                <div class="homeworkUpload" id="divUpload">
-                    <form action="upload.php" method="post" enctype="multipart/form-data">
-                        <div>
-                            <label class="labelUpload">
-                                <input type="text" class="inputUpload" name="number_dz" placeholder="HomeWork №">
-                            </label>
-                        </div>
-
-                        <div>
-                            <select name="language" class="selectHomeWork">
-                                <option >Angular</option>
-                                <option >PHP</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label class="labelUpload">
-                                <input type="text" class="inputUpload" name="task" placeholder="Task topic">
-                            </label>
-                        </div>
-
-                        <div>
-                            <input type="file" name="file">
-                            <button type="submit" value="Upload" class="btnHomeWork" name="btnUpload">Upload</button>
-                        </div>
-                    </form>
-                </div>
-             </div>
-
+        <?php
+        if(isset($_SESSION['teacher']) || isset($_SESSION['admin']))
+            include_once 'block/uploader.php';
+        ?>
         <div>
             <?php
             /*$files = scandir('../uploads');
@@ -67,7 +27,7 @@
                 </div>-->
             <?php
 
-            require 'services.php';
+            require 'block/services.php';
             $connection = new mysqli($serverName, $userName, $userPass, $database);
             if($connection->connect_error){
                 die("<p>Connection to database failed</p>".$connection->connect_error);

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -62,27 +65,37 @@
                             <i class="fa fa-credit-card"><a class="sidenav">Оплата Обучения</a></i>
                         </div>
                     </li>
+                    <?php
+
+                    if(isset($_SESSION['admin']))
+                    {
+                    ?>
+                    <li>
+                        <div class="sidebar-content">
+                            <i class="fa fa-edit"><a href="main.php?page=6" class="sidenav">Управление</a></i>
+                        </div>
+                    </li>
+                    <?php
+                    }
+                    ?>
                 </ul>
             </div>
             </div>
 
         <div class="col-md main">
             <?php
-
                 if(isset($_GET['page']))
                 {
                     $page = $_GET['page'];
                     if($page==1) include_once ('home.php');
                     if($page==3) include_once ('homework.php');
                     if($page==4)include_once ('educational.php');
+                    if($page==6)include_once ('admin.php');
                 }
-
-
             ?>
         </div>
     </div>
     <div class="footer">
-
     </div>
 </div>
 </body>

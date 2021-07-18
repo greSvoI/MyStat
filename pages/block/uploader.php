@@ -1,27 +1,34 @@
 <?php
 ?>
 <div class="homework-nav">
-    Выбор группы
-    <select name="selectGroup" id="selectHomeWork" class="selectHomeWork">
-        <?php
-
-        ?>
-    </select>
 
     <button onclick="homeworkUp()" id="btnUpload" class="btnHomeWork">Upload Home work</button>
 
     <div class="homeworkUpload" id="divUpload">
-        <form action="upload.php" method="post" enctype="multipart/form-data">
-            <div>
-                <label class="labelUpload">
-                    <input type="text" class="inputUpload" name="number_dz" placeholder="HomeWork №">
-                </label>
-            </div>
+        <form action="../pages/block/upload.php" method="post" enctype="multipart/form-data">
+            Выбор группы
+            <br>
+            <?php
+            if($page !=4)
+            {?>
+            <select name="selectGroup" id="selectHomeWork" class="selectHomeWork">
+                <?php
+                for($i=0;$i<count($user->group);$i++)
+                {
+                    echo '<option>'.$user->group[$i]['name'].'</option>';
+                }
+                }?>
+            </select>
+
 
             <div>
                 <select name="language" class="selectHomeWork">
-                    <option >Angular</option>
-                    <option >PHP</option>
+                    <?php
+                    for($i=0;$i<count($user->picture);$i++)
+                    {
+                        echo '<option>'.$user->picture[$i]['name'].'</option>';
+                    }
+                    ?>
                 </select>
             </div>
 

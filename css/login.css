@@ -3,42 +3,43 @@ body
     background: url('../img/laptop.jpg') ;
     background-size: cover;
 }
-.myContainer
+.login-container
 {
     color: white;
     top: 30%;
     left: 40%;
     position: absolute;
-    width: 300px;
-    height: 200px;
     margin-right: -50%;
-
     text-align: center;
 }
-.myDiv{
-background: transparent;
+.login-div{
+margin: 20px;
+    width: 300px;
 }
-.myInput
+.login-input
 {
     background: transparent;
     border: 0px;
-    height: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
     box-sizing: border-box;
     transition: 0.5s;
     outline: none;
 }
-.myLabel
+.login-label
 {
-    font-size: 20px;
+
+    padding: 10px;
     background: transparent;
     border-radius: 20px;
     border: 1px solid silver;
 }
-.myInput:focus
+.login-input:focus
 {
-    width: 250px;
+
 }
-.myInput::selection
+.login-input::selection
 {
     background: silver;
     color: white;
@@ -50,11 +51,11 @@ background: transparent;
     margin-bottom: 30px;
     display: flex;
 }
-.myBtn
+.login-btn
 {
     font-size: 20px;
     height: 40px;
-    width: 95%;
+    width: 92%;
     border-radius: 20px;
     background: transparent;
     outline: none;
@@ -62,13 +63,13 @@ background: transparent;
 }
 
 
-.myBtn:focus
+.login-btn:focus
 {
     outline: none;
     transition: background-color .2s linear;
 
 }
-.myBtn:hover
+.login-btn:hover
 {
     box-shadow: 0px 0px 0px 3px silver;
     background: black;

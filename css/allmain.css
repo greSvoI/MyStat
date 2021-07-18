@@ -10,6 +10,7 @@
     overflow-x: hidden;
     padding-top: 16px;
     transition: 0.5s;
+
 }
 li
 {
@@ -24,6 +25,8 @@ i
     font-size: 40px;
     color: white;
     display: inline-block;
+    margin-top: 10px;
+
 }
 .sidebar-nav a{
     margin-left: 80px;

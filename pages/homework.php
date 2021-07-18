@@ -4,7 +4,7 @@
 <div class="container-fluid" style="overflow: auto">
     <div class="row">
         <?php
-        if(isset($_SESSION['teacher']) || isset($_SESSION['admin']))
+        if($user instanceof Administration || $user instanceof Teacher)
             include_once 'block/uploader.php';
         ?>
         <div>
@@ -27,45 +27,50 @@
                 </div>-->
             <?php
 
-            require 'block/services.php';
+            /*require 'block/services.php';
             $connection = new mysqli($serverName, $userName, $userPass, $database);
             if($connection->connect_error){
                 die("<p>Connection to database failed</p>".$connection->connect_error);
             }
 
             $sql_query = "SELECT * FROM `homework_task`,`picture_task` WHERE homework_task.id_picture = picture_task.id;";
-            $res = $connection->query($sql_query);
+            $res = $connection->query($sql_query);*/
            /* if($connection->query($sql_query) === TRUE){
                 echo "<p>Data added!</p>";
             }
             else{
                 echo "<p>".$connection->error."</p>";
             }*/
-            if($res->num_rows > 0 )
+            if($user instanceof Administration || $user instanceof Teacher)
+            {
+                $user->ShowHomework($user);
+            }
+            else  $user->ShowHomework($user);
+            /*if($res->num_rows > 0 )
             {
                 while ($row = $res->fetch_assoc())
             {
-                    ?>
+                    */?><!--
                 <div class="homework">
                     <div>
 
-                        <img style="width: 190px; height: 190px" src="<?php echo $row['path']?>" alt="">
+                        <img style="width: 190px; height: 190px" src="<?php /*echo $row['path']*/?>" alt="">
                     </div>
                     <div style="color: black">
-                        <?php echo $row['task']?>
+                        <?php /*echo $row['task']*/?>
                     </div>
                     <div class="homework-bottom">
-                        <a download="<?php echo  $row['path_file']?>" href="<?php echo  $row['path_file']?>"> Home work № <?php echo $row['number'] ?></a>
+                        <a download="<?php /*echo  $row['path_file']*/?>" href="<?php /*echo  $row['path_file']*/?>"> Home work № <?php /*echo $row['number'] */?></a>
                     </div>
 
-                </div>
-            <?php
-
+                </div>-->
+<!--            --><?php
+/*
             }
 
             }
 
-            ?>
+            */?>
 
         </div>
     </div>
